@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing | QORTA</title>
+    <meta name="description"
+        content="Simple, low-friction pricing for restaurants. Choose the plan that fits your business.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-card.popular {
+            border: 2px solid var(--accent-color);
+            position: relative;
+        }
+
+        .pricing-card.popular::before {
+            content: "Recommended";
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--accent-color);
+            color: #fff;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-family: var(--font-heading);
+            font-weight: 700;
+            margin: 1rem 0;
+        }
+
+        .price span {
+            font-size: 1rem;
+            color: var(--text-secondary);
+            font-weight: 400;
+        }
+
+        .pricing-features {
+            margin: 2rem 0;
+            flex-grow: 1;
+        }
+
+        .pricing-features li {
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .pricing-features li::before {
+            content: "✓";
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">QORTA</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html" class="accent-text">Pricing</a>
+                <a href="demo.html" class="btn btn-primary">Request Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h1>How much does this cost?</h1>
+                <p class="m-auto text-secondary">Simple pricing with no hidden fees. Start for free and upgrade as you
+                    grow.</p>
+            </div>
+
+            <div class="grid grid-2 m-auto" style="max-width: 900px; margin-bottom: 4rem;">
+                <!-- Free Plan -->
+                <div class="card pricing-card">
+                    <h3>Free</h3>
+                    <p class="text-secondary" style="font-size: 0.9rem;">The basics to get started.</p>
+                    <div class="price">$0<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Visual QR menu</li>
+                        <li>Basic ordering</li>
+                        <li>Table number support</li>
+                    </ul>
+                    <a href="demo.html" class="btn btn-secondary text-center" style="width: 100%;">Get Started</a>
+                </div>
+
+                <!-- Starter Plan -->
+                <div class="card pricing-card popular">
+                    <h3>Starter</h3>
+                    <p class="text-secondary" style="font-size: 0.9rem;">Everything you need to scale.</p>
+                    <div class="price">$50<span>/month</span></div>
+                    <ul class="pricing-features">
+                        <li>Everything in Free</li>
+                        <li>Admin dashboard</li>
+                        <li>Real-time tracking</li>
+                        <li>Order history</li>
+                        <li>Menu availability toggle</li>
+                    </ul>
+                    <a href="demo.html" class="btn btn-primary text-center" style="width: 100%;">Choose Starter</a>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <p class="text-secondary" style="font-size: 0.9rem; font-weight: 500;">
+                    Higher tiers will add analytics and multi-location support.
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <span class="footer-logo">QORTA</span>
+                    <p class="text-secondary" style="font-size: 0.9rem;">Better basics for digital ordering. Built for
+                        the modern Zimbabwean restaurant.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="demo.html">Request Demo</a></li>
+                        <li><a href="mailto:hello@qorta.co.zw">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QORTA. All rights reserved.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.textContent = '☰';
+            });
+        });
+    </script>
+</body>
+
+</html>

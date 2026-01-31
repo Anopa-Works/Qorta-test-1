@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Demo | QORTA</title>
+    <meta name="description" content="Request a demo and see how QORTA can transform your restaurant ordering system.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            font-size: 0.95rem;
+            color: var(--text-primary);
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            border: 1px solid rgba(51, 51, 51, 0.1);
+            border-radius: 6px;
+            font-family: var(--font-body);
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+
+        .form-group input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+        }
+
+        .form-group label span {
+            color: var(--text-secondary);
+            font-size: 0.85rem;
+            font-weight: 400;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">QORTA</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation">☰</button>
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="demo.html" class="btn btn-primary">Request Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container">
+            <div class="text-center" style="margin-bottom: 4rem;">
+                <h1>How do I try this?</h1>
+                <p class="m-auto text-secondary">Leave your details below and we’ll reach out to schedule a quick 1:1
+                    demo.</p>
+            </div>
+
+            <div class="card m-auto" style="max-width: 600px;">
+                <form id="demo-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" placeholder="E.g. John Doe" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="business_name">Business name</label>
+                        <input type="text" id="business_name" name="business_name" placeholder="E.g. The Green Café"
+                            required>
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" placeholder="john@example.com" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone <span>(optional)</span></label>
+                        <input type="tel" id="phone" name="phone" placeholder="+263 ...">
+                    </div>
+                    <div style="margin-top: 2rem;">
+                        <button type="submit" class="btn btn-primary" style="width: 100%; border-radius: 6px;">Request
+                            demo access</button>
+                    </div>
+                </form>
+                <div id="form-success" style="display: none; text-align: center; padding: 2rem 0;">
+                    <div style="font-size: 3rem; margin-bottom: 1rem;">✅</div>
+                    <h3 class="accent-text" style="margin-bottom: 1rem;">Request received!</h3>
+                    <p class="text-secondary">We've sent an auto-reply to your email. One of our team members will be in
+                        touch shortly.</p>
+                </div>
+            </div>
+
+            <div class="text-center" style="margin-top: 3rem;">
+                <p class="text-secondary" style="font-size: 0.95rem;">
+                    Or reach us directly at <a href="mailto:hello@qorta.co.zw"
+                        style="text-decoration: underline; color: var(--text-primary);">hello@qorta.co.zw</a>
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <span class="footer-logo">QORTA</span>
+                    <p class="text-secondary" style="font-size: 0.9rem;">Better basics for digital ordering. Built for
+                        the modern Zimbabwean restaurant.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="demo.html">Request Demo</a></li>
+                        <li><a href="mailto:hello@qorta.co.zw">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QORTA. All rights reserved.</p>
+                <div style="display: flex; gap: 1.5rem;">
+                    <a href="#">LinkedIn</a>
+                    <a href="#">Twitter</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+
+        // Close menu on link click
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+                navToggle.textContent = '☰';
+            });
+        });
+
+        document.getElementById('demo-form').addEventListener('submit', function (e) {
+            e.preventDefault();
+            this.style.display = 'none';
+            document.getElementById('form-success').style.display = 'block';
+        });
+    </script>
+</body>
+
+</html>
