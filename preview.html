@@ -1,0 +1,506 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QORTA - Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-light: #F0EEE9;
+            --color-dark: #333333;
+            --color-accent: #0DC0E0;
+            --font-heading: 'Poppins', sans-serif;
+            --font-body: 'Inter', sans-serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--font-body);
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 1.6;
+            color: var(--color-dark);
+            background-color: var(--color-light);
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        h1 {
+            font-size: 48px;
+            font-weight: 700;
+            margin-bottom: 24px;
+        }
+
+        h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Navbar */
+        .navbar {
+            background-color: var(--color-light);
+            padding: 24px 0;
+            border-bottom: 1px solid rgba(51, 51, 51, 0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-size: 28px;
+            font-weight: 700;
+            color: var(--color-dark);
+            text-decoration: none;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 32px;
+            align-items: center;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 16px;
+            color: var(--color-dark);
+            text-decoration: none;
+        }
+
+        .nav-links .cta-link {
+            color: var(--color-accent);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 60px 0 100px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-background {
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(13, 192, 224, 0.03) 0%, rgba(13, 192, 224, 0.08) 100%);
+            z-index: 0;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 64px;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-description {
+            font-size: 20px;
+            line-height: 1.7;
+            color: rgba(51, 51, 51, 0.9);
+        }
+
+        .hero-tagline {
+            font-size: 18px;
+            font-weight: 500;
+            margin: 16px 0 32px;
+        }
+
+        .cta-group {
+            display: flex;
+            gap: 16px;
+        }
+
+        .btn {
+            display: inline-block;
+            font-family: var(--font-body);
+            font-weight: 500;
+            font-size: 18px;
+            padding: 16px 32px;
+            text-decoration: none;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .btn-primary {
+            background-color: var(--color-accent);
+            color: white;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            color: var(--color-dark);
+            border: 2px solid var(--color-dark);
+        }
+
+        /* Phone Mockup */
+        .phone-mockup {
+            position: relative;
+            width: 320px;
+            margin: 0 auto;
+        }
+
+        .phone-screen {
+            background: white;
+            border-radius: 24px;
+            padding: 24px 16px;
+            box-shadow: 
+                0 20px 60px rgba(13, 192, 224, 0.15),
+                0 8px 24px rgba(0, 0, 0, 0.08);
+            border: 8px solid var(--color-dark);
+        }
+
+        .mock-menu-header {
+            text-align: center;
+            padding-bottom: 16px;
+            border-bottom: 2px solid var(--color-light);
+            margin-bottom: 20px;
+        }
+
+        .mock-logo {
+            font-family: var(--font-heading);
+            font-weight: 600;
+            font-size: 18px;
+        }
+
+        .mock-menu-item {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 16px;
+            padding: 12px;
+            background: var(--color-light);
+            border-radius: 8px;
+        }
+
+        .mock-item-image {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #0DC0E0 0%, #0aa5c3 100%);
+            border-radius: 6px;
+            flex-shrink: 0;
+        }
+
+        .mock-item-details {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        .mock-item-name {
+            width: 80%;
+            height: 12px;
+            background: rgba(51, 51, 51, 0.3);
+            border-radius: 4px;
+        }
+
+        .mock-item-price {
+            width: 40%;
+            height: 10px;
+            background: rgba(13, 192, 224, 0.4);
+            border-radius: 4px;
+        }
+
+        .qr-code {
+            position: absolute;
+            bottom: -40px;
+            right: -40px;
+            width: 120px;
+            height: 120px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 
+                0 12px 32px rgba(0, 0, 0, 0.12),
+                0 4px 12px rgba(0, 0, 0, 0.08);
+            padding: 12px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .qr-pattern {
+            width: 80px;
+            height: 80px;
+            background-image: 
+                linear-gradient(90deg, var(--color-dark) 25%, transparent 25%),
+                linear-gradient(var(--color-dark) 25%, transparent 25%);
+            background-size: 20px 20px;
+            background-position: 0 0, 10px 10px;
+            border-radius: 4px;
+        }
+
+        .qr-label {
+            font-size: 11px;
+            font-weight: 600;
+            color: var(--color-dark);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Benefits */
+        .what-qorta-does {
+            padding: 80px 0;
+            background-color: white;
+        }
+
+        .what-qorta-does h2 {
+            text-align: center;
+            margin-bottom: 16px;
+        }
+
+        .section-intro {
+            text-align: center;
+            font-size: 20px;
+            margin-bottom: 48px;
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+        }
+
+        .benefit-card {
+            padding: 36px 28px;
+            background-color: var(--color-light);
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(13, 192, 224, 0.12);
+            border-color: rgba(13, 192, 224, 0.2);
+        }
+
+        .benefit-icon {
+            margin-bottom: 20px;
+        }
+
+        .benefit-card h3 {
+            font-size: 20px;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card p {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(51, 51, 51, 0.8);
+        }
+
+        .social-proof {
+            padding: 60px 0;
+            background: linear-gradient(135deg, rgba(13, 192, 224, 0.05) 0%, rgba(13, 192, 224, 0.02) 100%);
+            text-align: center;
+        }
+
+        .proof-text {
+            font-size: 24px;
+            font-family: var(--font-heading);
+            font-weight: 500;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        footer {
+            padding: 40px 0;
+            background-color: var(--color-dark);
+            color: var(--color-light);
+            text-align: center;
+        }
+
+        @media (max-width: 968px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 48px;
+            }
+            
+            .hero-visual {
+                order: -1;
+            }
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 36px; }
+            .cta-group { flex-direction: column; }
+            .btn { text-align: center; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">QORTA</a>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li><a href="#">How It Works</a></li>
+                <li><a href="#">Features</a></li>
+                <li><a href="#">Pricing</a></li>
+                <li><a href="#" class="cta-link">Request Demo</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <section class="hero">
+            <div class="hero-background"></div>
+            <div class="container hero-content">
+                <div class="hero-text">
+                    <h1>Here's how to do better at the basics of digital ordering.</h1>
+                    <p class="hero-description">
+                        QORTA helps restaurants, cafés, and fast food outlets turn their menu into a fast, visual, error-free ordering system — accessible instantly by QR code.
+                    </p>
+                    <p class="hero-tagline">
+                        No apps. No logins. No friction.
+                    </p>
+                    <div class="cta-group">
+                        <a href="#" class="btn btn-primary">Request a demo</a>
+                        <a href="#" class="btn btn-secondary">See how it works</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="phone-mockup">
+                        <div class="phone-screen">
+                            <div class="mock-menu-header">
+                                <div class="mock-logo">Restaurant Name</div>
+                            </div>
+                            <div class="mock-menu-item">
+                                <div class="mock-item-image"></div>
+                                <div class="mock-item-details">
+                                    <div class="mock-item-name"></div>
+                                    <div class="mock-item-price"></div>
+                                </div>
+                            </div>
+                            <div class="mock-menu-item">
+                                <div class="mock-item-image"></div>
+                                <div class="mock-item-details">
+                                    <div class="mock-item-name"></div>
+                                    <div class="mock-item-price"></div>
+                                </div>
+                            </div>
+                            <div class="mock-menu-item">
+                                <div class="mock-item-image"></div>
+                                <div class="mock-item-details">
+                                    <div class="mock-item-name"></div>
+                                    <div class="mock-item-price"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="qr-code">
+                            <div class="qr-pattern"></div>
+                            <span class="qr-label">Scan to order</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="what-qorta-does">
+            <div class="container">
+                <h2>What QORTA Does</h2>
+                <p class="section-intro">QORTA replaces static menus with a system that:</p>
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#0DC0E0" opacity="0.1"/>
+                                <path d="M12 20L18 26L28 14" stroke="#0DC0E0" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3>Clear visual menus</h3>
+                        <p>Customers understand instantly what they're ordering.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#0DC0E0" opacity="0.1"/>
+                                <path d="M20 12V20L25 25" stroke="#0DC0E0" stroke-width="2.5" stroke-linecap="round"/>
+                                <circle cx="20" cy="20" r="8" stroke="#0DC0E0" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <h3>Automatic details capture</h3>
+                        <p>Table number and delivery details are captured without asking twice.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#0DC0E0" opacity="0.1"/>
+                                <path d="M14 20H26M14 15H26M14 25H22" stroke="#0DC0E0" stroke-width="2.5" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Clean order delivery</h3>
+                        <p>Readable orders sent directly to staff, no confusion.</p>
+                    </div>
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <svg width="40" height="40" viewBox="0 0 40 40" fill="none">
+                                <rect width="40" height="40" rx="8" fill="#0DC0E0" opacity="0.1"/>
+                                <rect x="13" y="14" width="14" height="14" rx="2" stroke="#0DC0E0" stroke-width="2.5"/>
+                                <path d="M13 18H27M17 14V28" stroke="#0DC0E0" stroke-width="2.5"/>
+                            </svg>
+                        </div>
+                        <h3>Full order history</h3>
+                        <p>Complete records for customers and admins.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="social-proof">
+            <div class="container">
+                <p class="proof-text">Built for small eateries that want speed, clarity, and control.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2026 QORTA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
