@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pricing - QORTA</title>
+    <meta name="description"
+        content="Simple, transparent pricing for QORTA. Start for free and grow with your business.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .pricing-grid {
+            margin-top: 4rem;
+        }
+
+        .pricing-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: var(--border-radius-lg);
+            position: relative;
+            transition: transform 0.3s ease;
+        }
+
+        .pricing-card.recommended {
+            border: 2px solid var(--accent-cyan);
+            box-shadow: 0 10px 40px rgba(18, 181, 229, 0.15);
+        }
+
+        .recommend-badge {
+            position: absolute;
+            top: -15px;
+            right: 20px;
+            background: var(--accent-cyan);
+            color: #fff;
+            padding: 0.25rem 1rem;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        .price {
+            font-size: 3rem;
+            font-weight: 700;
+            margin: 1.5rem 0;
+            font-family: var(--font-heading);
+            color: var(--text-emphasis);
+            display: flex;
+            align-items: baseline;
+        }
+
+        .price span {
+            font-size: 1rem;
+            font-weight: 400;
+            color: var(--text-secondary);
+            margin-left: 0.5rem;
+        }
+
+        .feature-list {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid #eee;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 0.95rem;
+        }
+
+        .check-icon {
+            color: var(--accent-cyan);
+            font-weight: bold;
+            font-size: 1.1rem;
+            flex-shrink: 0;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="reveal-element reveal-1">
+        <div class="container">
+            <a href="index.html" class="logo">QORTA</a>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html" style="color: var(--accent-cyan);">Pricing</a>
+                <a href="demo.html" class="btn btn-primary">Request Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container text-center" style="padding-top: 6rem;">
+            <h1 class="reveal-element reveal-1">Simple Pricing</h1>
+            <h2 class="reveal-element reveal-2">Start for free, grow with us</h2>
+            <p class="m-auto text-secondary reveal-element reveal-3">Choose the plan that fits your restaurant's needs
+                today.</p>
+
+            <div class="grid grid-2 pricing-grid reveal-element reveal-5"
+                style="max-width: 900px; margin-left: auto; margin-right: auto; text-align: left;">
+
+                <!-- Free Tier -->
+                <div class="pricing-card">
+                    <h3>Free QR Menu</h3>
+                    <p class="text-secondary">Perfect for getting started</p>
+                    <div class="price">$0 <span>/mo</span></div>
+
+                    <a href="demo.html" class="btn btn-secondary" style="width: 100%; border-radius: 8px;">Get
+                        Started</a>
+                    <p class="text-secondary text-center mt-1" style="font-size: 0.8rem;">No credit card required</p>
+
+                    <ul class="feature-list">
+                        <li><span class="check-icon">✓</span> Basic visual ordering</li>
+                        <li><span class="check-icon">✓</span> Digital Menu access</li>
+                    </ul>
+                </div>
+
+                <!-- Standard Tier -->
+                <div class="pricing-card recommended">
+                    <span class="recommend-badge">Recommended</span>
+                    <h3 style="color: var(--accent-cyan);">Standard</h3>
+                    <p class="text-secondary">Full control & insights</p>
+                    <div class="price">$50 <span>/mo</span></div>
+
+                    <a href="demo.html" class="btn btn-primary" style="width: 100%; border-radius: 8px;">Select
+                        Standard</a>
+
+                    <ul class="feature-list">
+                        <li><span class="check-icon">✓</span> Everything in Free</li>
+                        <li><span class="check-icon">✓</span> Admin dashboard</li>
+                        <li><span class="check-icon">✓</span> Order history</li>
+                        <li><span class="check-icon">✓</span> Menu toggle</li>
+                        <li><span class="check-icon">✓</span> Simple promotions</li>
+                    </ul>
+                </div>
+
+            </div>
+
+            <p class="text-secondary mt-3 reveal-element reveal-5" style="font-size: 0.9rem; margin-top: 4rem;">Higher
+                tiers will add analytics and multi-location support.</p>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="reveal-element reveal-5">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <span class="footer-logo">QORTA</span>
+                    <p class="text-secondary" style="font-size: 0.9rem;">Better basics for digital ordering.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="demo.html">Request Demo</a></li>
+                        <li><a href="mailto:hello@qorta.co.zw">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QORTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+</body>
+
+</html>
