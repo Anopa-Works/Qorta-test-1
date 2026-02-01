@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Request Demo - QORTA</title>
+    <meta name="description"
+        content="Request immediate access to the QORTA demo. Transform your restaurant ordering system today.">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .demo-form-card {
+            background: #fff;
+            padding: 3rem;
+            border-radius: var(--border-radius-lg);
+            box-shadow: var(--card-shadow);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 2rem;
+            text-align: left;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+            color: var(--text-dark);
+            font-size: 0.95rem;
+        }
+
+        .input-wrapper {
+            position: relative;
+        }
+
+        .input-icon {
+            position: absolute;
+            left: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #ccc;
+            font-size: 1.2rem;
+            pointer-events: none;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1rem 1rem 3rem;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: var(--font-body);
+            transition: all 0.3s ease;
+            background: #fff;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--accent-cyan);
+            box-shadow: 0 0 0 3px rgba(18, 181, 229, 0.1);
+        }
+
+        .optional-label {
+            float: right;
+            color: var(--accent-cyan);
+            font-size: 0.8rem;
+            font-weight: 400;
+        }
+
+        .demo-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(18, 181, 229, 0.15);
+            color: var(--accent-cyan);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin: 0 auto 1.5rem;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <a href="index.html" class="logo">QORTA</a>
+            <button class="nav-toggle" id="nav-toggle">☰</button>
+            <nav class="nav-links" id="nav-menu">
+                <a href="index.html">Home</a>
+                <a href="how-it-works.html">How It Works</a>
+                <a href="features.html">Features</a>
+                <a href="pricing.html">Pricing</a>
+                <a href="demo.html" class="btn btn-primary">Request Demo</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="container text-center" style="padding-top: 6rem;">
+            <a href="index.html"
+                style="color: var(--text-secondary); text-transform: uppercase; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; display: block; margin-bottom: 2rem;">←
+                Tier 1 Access</a>
+
+            <div class="demo-icon">🍴</div>
+            <h1 class="mb-2">Get Started with QORTA</h1>
+            <p class="text-secondary m-auto mb-3" style="max-width: 500px;">Ready to transform your restaurant's
+                ordering system? Fill out the form below for immediate demo access.</p>
+
+            <div class="demo-form-card">
+                <form action="mailto:demo@qorta.co.zw" method="post" enctype="text/plain">
+                    <div class="form-group">
+                        <label class="form-label">Full Name</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">👤</span>
+                            <input type="text" class="form-input" placeholder="Enter your full name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Business Name</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">🏪</span>
+                            <input type="text" class="form-input" placeholder="Restaurant or business name" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Email Address</label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">✉</span>
+                            <input type="email" class="form-input" placeholder="name@company.com" required>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Phone Number <span class="optional-label">Optional</span></label>
+                        <div class="input-wrapper">
+                            <span class="input-icon">📞</span>
+                            <input type="tel" class="form-input" placeholder="+1 (555) 000-0000">
+                        </div>
+                    </div>
+
+                    <button type="submit" class="btn btn-primary"
+                        style="width: 100%; border-radius: 8px; justify-content: center;">Request demo access →</button>
+                </form>
+
+                <p class="text-secondary mt-2" style="font-size: 0.85rem; margin-bottom: 0;">Submissions are sent
+                    directly to <a href="mailto:demo@qorta.co.zw"
+                        style="color: var(--accent-cyan);">demo@qorta.co.zw</a></p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-col">
+                    <span class="footer-logo">QORTA</span>
+                    <p class="text-secondary" style="font-size: 0.9rem;">Better basics for digital ordering.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Product</h4>
+                    <ul>
+                        <li><a href="how-it-works.html">How It Works</a></li>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Support</h4>
+                    <ul>
+                        <li><a href="demo.html">Request Demo</a></li>
+                        <li><a href="mailto:hello@qorta.co.zw">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer-col">
+                    <h4>Legal</h4>
+                    <ul>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 QORTA. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        navToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+            navToggle.textContent = navMenu.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+</body>
+
+</html>
